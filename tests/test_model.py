@@ -8,7 +8,6 @@ def test_init_logging_with_default_formatter():
     assert logging_manager.level == logging.DEBUG
     assert logging_manager.filename == "app.log"
     assert logging_manager.handler is None
-    assert isinstance(logging_manager.logger, logging.Logger)
 
 
 def test_logging_context_manager_enter_exit():

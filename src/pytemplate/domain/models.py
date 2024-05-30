@@ -5,10 +5,11 @@ class LoggingContextManager:
     def __init__(self, level, filename):
         self.level = level
         self.filename = filename
-        self.logger = logging.getLogger()
+        self.logger = None
         self.handler = None
 
     def __enter__(self):
+        self.logger = logging.getLogger(__name__)
         self.logger.setLevel(self.level)
         self.handler = logging.FileHandler(self.filename)
         formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
