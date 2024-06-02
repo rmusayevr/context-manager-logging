@@ -5,7 +5,7 @@ from unittest.mock import patch
 import pytest
 
 from pytemplate.entrypoints.cli.main import main
-from src.pytemplate.domain.models import LoggingContextManager
+from src.pytemplate.service.logging import LoggingContextManager
 
 
 def test_init_logging_with_default_formatter():
